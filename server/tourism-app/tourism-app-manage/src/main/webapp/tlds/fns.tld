@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+	<description>JSTL 1.1 functions library</description>
+	<display-name>JSTL functions sys</display-name>
+	<tlib-version>1.1</tlib-version>
+	<short-name>fns</short-name>
+	<uri>http://java.sun.com/jsp/jstl/functionss</uri>
+
+	<!-- util -->
+	<function>
+		<description>字符截取</description>
+		<name>abbreviate</name>
+		<function-class>com.box.smart.hangzhou.util.StringUtil</function-class>
+		<function-signature>java.lang.String subtract(java.lang.String, java.lang.Integer)</function-signature>
+		<example>${fns:abbreviate(src, 50)}</example>
+	</function>
+	
+	<function>
+		<description>字符分割</description>
+		<name>split</name>
+		<function-class>org.apache.commons.lang3.StringUtils</function-class>
+		<function-signature>java.lang.String[] split(java.lang.String, java.lang.String)</function-signature>
+		<example>${fns:split(src, 50)}</example>
+	</function>
+	
+	<!-- service -->
+	<function>
+		<description>获取area</description>
+		<name>areaList</name>
+		<function-class>com.box.smart.hangzhou.service.StaticComponent</function-class>
+		<function-signature>java.util.List listArea()</function-signature>
+		<example>${fns:areaList()}</example>
+	</function>
+	
+	<function>
+		<description>获取activity</description>
+		<name>activityList</name>
+		<function-class>com.box.smart.hangzhou.service.StaticComponent</function-class>
+		<function-signature>java.util.List listActivity()</function-signature>
+		<example>${fns:activityList()}</example>
+	</function>
+	
+	<function>
+		<description>获取module</description>
+		<name>moduleList</name>
+		<function-class>com.box.smart.hangzhou.service.StaticComponent</function-class>
+		<function-signature>java.util.List listModule()</function-signature>
+		<example>${fns:moduleList()}</example>
+	</function>
+</taglib>
