@@ -19,3 +19,6 @@ target
 .project
 .classpath
 logs
+
+# bakup file
+*.bak
