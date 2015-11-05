@@ -13,5 +13,6 @@
   	<module>tourism-service-business</module>
   	<module>tourism-service-dao</module>
   	<module>tourism-service-i18n</module>
+  	<module>tourism-service-util</module>
   </modules>
 </project>
