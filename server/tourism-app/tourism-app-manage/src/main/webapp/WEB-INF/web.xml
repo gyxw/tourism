@@ -20,25 +20,25 @@
 	 -->
 	<context-param>   
 		<param-name>webAppRootKey</param-name>   
-		<param-value>smart-hangzhou-manager.root</param-value> 
+		<param-value>app.root</param-value> 
 	</context-param>
 
 	<listener>
 		<listener-class>
-	    	org.springframework.web.context.ContextLoaderListener
-	    </listener-class>
+    	org.springframework.web.context.ContextLoaderListener
+    </listener-class>
 	</listener>
 	
 	<listener>
-	    <listener-class>   
-	    	org.springframework.web.context.request.RequestContextListener
-	    </listener-class>
+    <listener-class>   
+    	org.springframework.web.context.request.RequestContextListener
+    </listener-class>
 	</listener>
 	
 	<listener>
-	    <listener-class>   
-	    	org.springframework.web.util.WebAppRootListener
-	    </listener-class>
+    <listener-class>   
+    	org.springframework.web.util.WebAppRootListener
+    </listener-class>
 	</listener>
 
 	<filter>

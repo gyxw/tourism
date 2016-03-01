@@ -12,12 +12,6 @@
 	  <dependency>
       <groupId>com.iac</groupId>
       <artifactId>tourism-service-util</artifactId>
-      <version>0.0.1</version>
-    </dependency>
-    <dependency>
-      <groupId>com.iac</groupId>
-      <artifactId>tourism-service-entity</artifactId>
-      <version>0.0.1</version>
     </dependency>
 		<!-- SPRINGSIDE begin -->
 		<dependency>
