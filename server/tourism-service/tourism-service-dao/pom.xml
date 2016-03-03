@@ -9,6 +9,10 @@
 	<artifactId>tourism-service-dao</artifactId>
 	<description>only provide database operation</description>
 	<dependencies>
+	  <dependency>
+      <groupId>com.iac</groupId>
+      <artifactId>tourism-service-util</artifactId>
+    </dependency>
 		<!-- SPRINGSIDE begin -->
 		<dependency>
 			<groupId>io.springside</groupId>

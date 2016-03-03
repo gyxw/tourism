@@ -10,7 +10,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 
 	<!-- 自动扫描且只扫描@Controller -->
-	<context:component-scan base-package="com.box.smart.hangzhou.controller" use-default-filters="false">
+	<context:component-scan base-package="com.iac.tourism.api.controller" use-default-filters="false">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
 	</context:component-scan>
@@ -39,15 +39,6 @@
 	
 	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL-->	
 	<mvc:default-servlet-handler/>
-	
-	<!-- 文件上传resolver -->
-	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">  
-        <property name="defaultEncoding" value="utf-8"></property>   
-        <property name="maxUploadSize" value="10485670"></property>  
-        <property name="maxInMemorySize" value="40960"></property>
-        <property name="resolveLazily" value="true"/>  
-   </bean>
-	
 	
 	<!-- 定义无需Controller的url<->view直接映射 -->
 	<mvc:view-controller path="/" view-name="redirect:/admin"/>

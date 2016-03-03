@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:rop="http://www.rop.com/schema/rop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+       http://www.rop.com/schema/rop http://www.rop.com/schema/rop/rop-1.0.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+    <!-- 启动Rop框架 -->
+    <rop:annotation-driven
+        id="router"
+        session-manager="sessionManager"
+        app-secret-manager="appSecretController"
+        service-access-controller="serviceAccessController"
+        ext-error-base-names="rop/ropError.properties"
+        service-timeout-seconds="1000"
+        invoke-times-controller="invokeTimesController"
+        upload-file-max-size="10"
+        upload-file-types="png,gif"
+        core-pool-size="200"
+        max-pool-size="500"
+        queue-capacity="50"
+        keep-alive-seconds="300"
+        sign-enable="false"/>
+
+    <bean id="sessionManager" class="com.iac.tourism.api.security.LocalSessionController" />
+    <bean id="appSecretController" class="com.iac.tourism.api.security.AppSecrityController"/>
+    <bean id="invokeTimesController" class="com.iac.tourism.api.security.AppInvokeTimesController"/>
+
+    <bean id="serviceAccessController" class="com.iac.tourism.api.security.AppServiceAccessController"/>
+
+    <!--注册拦截器，可配置多个
+    <rop:interceptors>
+        <bean class="com.iac.tourism.api.security.OpenEntityManagerInterceptor"/>
+    </rop:interceptors>-->
+</beans>

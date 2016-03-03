@@ -20,7 +20,7 @@
 	 -->
 	<context-param>   
 		<param-name>webAppRootKey</param-name>   
-		<param-value>smart-hangzhou-manager.root</param-value> 
+		<param-value>tourism-app.root</param-value> 
 	</context-param>
 
 	<listener>
@@ -67,29 +67,19 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<filter>
-		<filter-name>shiroFilter</filter-name>
-		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  <servlet>
+		<servlet-name>SpringApplication</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
 		<init-param>
-			<param-name>targetFilterLifecycle</param-name>
-			<param-value>true</param-value>
+		  <param-name>javax.ws.rs.Application</param-name>
+		  <param-value>com.iac.tourism.api.MyApplication</param-value>
 		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>shiroFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
-	
-<!-- 后台模板不使用sitemesh
-	<filter>
-		<filter-name>sitemeshFilter</filter-name>
-		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>sitemeshFilter</filter-name>
-		<url-pattern>/*</url-pattern>
-	</filter-mapping>
- -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+	  <servlet-name>SpringApplication</servlet-name>
+	  <url-pattern>/api/*</url-pattern>
+	</servlet-mapping> 
 
 	<servlet>
 		<servlet-name>springServlet</servlet-name>

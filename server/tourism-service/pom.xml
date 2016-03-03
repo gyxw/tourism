@@ -9,9 +9,10 @@
   <packaging>pom</packaging>
   <description>service layour</description>
   <modules>
-  	<module>tourism-service-entity</module>
+  	<module>tourism-service-bean</module>
   	<module>tourism-service-business</module>
   	<module>tourism-service-dao</module>
   	<module>tourism-service-i18n</module>
+  	<module>tourism-service-util</module>
   </modules>
 </project>
